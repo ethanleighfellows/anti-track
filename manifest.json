@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Ethan's AntiTrack",
+  "version": "1.0",
+  "description": "Automatically strip tracking params (utm_*, si=, etc.) from URLs",
+  "permissions": [
+    "scripting",
+    "clipboardWrite",
+    "contextMenus",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/clean-16.png",
+      "48": "icons/clean-48.png",
+      "128": "icons/clean-128.png"
+    },
+    "default_title": "Ethan's AntiTrack"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
