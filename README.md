@@ -1,5 +1,3 @@
----
-
 # 🛡️ Anti-Track
 
 **A lightweight Chrome extension that automatically removes UTM tracking identifiers from URLs before you visit a page.**
