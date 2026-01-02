@@ -53,7 +53,7 @@ Since **Anti-Track** is provided as raw source files and not packaged, you can i
 5. Select the root directory of this project (the folder containing `manifest.json`).
 6. Make sure the extension is enabled — you should now see its icon in your toolbar.
 
-> Chrome will show a warning for developer mode extensions. This is normal and safe if you trust the source. ([JeetBlock][2])
+> Chrome will show a warning for developer mode extensions. This is normal and safe if you trust the source.
 
 ---
 
