@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "removeParams": [
+              "utm_source",
+              "utm_medium",
+              "utm_campaign",
+              "utm_term",
+              "utm_content",
+              "utm_id",
+              "utm_source_platform",
+              "si",
+              "gclid",
+              "fbclid",
+              "igshid",
+              "ttclid",
+              "yclid",
+              "msclkid",
+              "mc_cid",
+              "mc_eid",
+              "_bta_tid",
+              "_bta_c",
+              "trk_contact",
+              "trk_msg",
+              "trk_module",
+              "trk_sid"
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "script",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "other"
+      ]
+    }
+  }
+]

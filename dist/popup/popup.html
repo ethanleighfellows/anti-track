@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+  <title>Anti-Track Settings</title>
+</head>
+<body>
+  <div class="glass-panel">
+    <div class="header">
+      <img src="../icons/icon48.png" alt="Anti-Track logo" class="logo">
+      <h1>Anti-Track</h1>
+    </div>
+    
+    <div class="info-card">
+      <p>Clean URLs automatically. Intercepts UTM trackers using zero-packet native resolution.</p>
+    </div>
+
+    <div class="custom-rules-section">
+      <h3>Custom Tracking Parameters</h3>
+      <p class="subtitle">Add extra IDs to obliterate</p>
+      
+      <form id="add-rule-form">
+        <input type="text" id="new-param-input" placeholder="e.g. session_id..." autocomplete="off">
+        <button type="submit" id="add-btn">Block</button>
+      </form>
+
+      <div class="rules-list-container">
+        <ul id="rules-list">
+          <!-- Dynamic Rules Inserted Here -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

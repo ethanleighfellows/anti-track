@@ -1,59 +1,50 @@
-# 🛡️ Anti-Track
+# 🛡️ Anti-Track v2.0.0
 
-**A lightweight Chrome extension that automatically removes UTM tracking identifiers from URLs before you visit a page.**
-Keep your browsing **cleaner, shorter, and more privacy-focused** — no tracking tokens ever reach the destination URL.
+**A blazing-fast, TypeScript-powered Chrome extension that completely obliterates UTM tracking identifiers from URLs before a single packet is sent over the network.**
 
-This extension strips common UTM parameters like those added for marketing analytics (e.g., `utm_source`, `utm_medium`, etc.), so links like:
+Keep your browsing **cleaner, shorter, and more privacy-focused**.
 
-```
-https://example.com/page?utm_source=twitter&utm_medium=social
-```
-
-become:
-
-```
-https://example.com/page
-```
+Anti-Track intercepts navigation natively at the browser core using `declarativeNetRequest`. This ensures tracking tokens never reach their destination and that crucial URL parameters (like YouTube Video IDs) are intelligently preserved.
 
 ---
 
 ## 🚀 Features
 
-* **Automatic UTM stripping:** Removes query parameters used for tracking.
-* **No backend or cloud processing:** Runs entirely in your browser.
-* **Unpacked, editable source:** Developers can modify or extend it freely.
-* **Lightweight & focused:** Only removes tracking identifiers — no bloat, no extra permissions.
-
----
-
-## 🧠 How It Works
-
-Anti-Track listens for URL changes and intercepts visits that contain UTM or similar tracking parameters. It then rewrites those URLs **before navigation** so you never load pages with tracking tokens attached.
-
-> *Note:* This approach is similar to other privacy-oriented extensions that clean URLs automatically before navigation. ([Chrome Web Store][1])
+* **Zero-Packet Evasion:** Uses modern Chrome APIs to strip analytics tokens *before* the request even leaves the browser.
+* **Dynamic Custom Rules:** Features a breathtaking glassmorphism settings popup where you can instantly add and block **any custom parameter** you want.
+* **Clipboard Sanitization:** Safely strips trackers from URLs copied directly from your webpage, guaranteeing pure links when pasting to friends.
+* **Intelligent Querying:** Driven by `URLSearchParams` to ensure critical parameters required by websites never break.
+* **Typesafe & Fast:** 100% migrated to strict TypeScript with an optimized `esbuild` pipeline.
 
 ---
 
 ## 📦 Installation (Unpacked)
 
-Since **Anti-Track** is provided as raw source files and not packaged, you can install it in Chrome (or any Chromium-based browser) using **Developer Mode → Load Unpacked**:
+Since **Anti-Track** is provided as raw source files and not packaged on the web store, you can install it in Chrome using **Developer Mode → Load Unpacked**:
 
-1. **Clone the repository**
-
+1. **Clone the repository && Build:**
    ```bash
    git clone https://github.com/ethanleighfellows/anti-track.git
+   cd anti-track
+   npm install
+   npm run build
    ```
 2. **Open Chrome** and go to:
-
    ```
    chrome://extensions/
    ```
 3. **Enable Developer mode** (toggle in the top right).
 4. Click **Load unpacked**.
-5. Select the root directory of this project (the folder containing `manifest.json`).
-6. Make sure the extension is enabled — you should now see its icon in your toolbar.
+5. Select the **`dist/`** directory inside this project folder.
+6. Make sure the extension is enabled — you should now see its icon in your toolbar!
 
-> Chrome will show a warning for developer mode extensions. This is normal and safe if you trust the source.
+---
+
+## ⚙️ How to use the Native Settings UI
+Anti-Track goes beyond the static 20 default trackers (like `utm_source`, `si`, `fbclid`). To add your own parameter:
+1. Pin the extension to your toolbar.
+2. Click the icon to open the Premium Glass UI.
+3. Type any parameter (e.g. `session_id`) into the input and click **Block**. Every network request going forward will instantly destroy that parameter!
 
 ---
 
@@ -61,41 +52,24 @@ Since **Anti-Track** is provided as raw source files and not packaged, you can i
 
 ```
 anti-track/
-├── icons/             # Extension icon assets
-├── background.js      # Background script (core tracker)
-├── content.js         # Content script to intercept URLs
 ├── manifest.json      # Chrome Extension manifest
-├── LICENSE            # Licensing terms
+├── rules.json         # Base declarative network rules
+├── src/               # TypeScript Source Code
+│   ├── background.ts  # Background worker (context menus)
+│   ├── content.ts     # Content script (clipboard hijacker)
+│   ├── lib/           # Shared tracking utilities
+│   ├── popup/         # Dynamic Settings UI
+│   └── tests/         # vitest unit tests
+├── dist/              # The compiled Extension directory
 └── README.md          # This file
 ```
-
----
-
-## 🧪 Testing
-
-Once loaded as an unpacked extension:
-
-1. Visit a site with tracking parameters, e.g.:
-
-   ```
-   https://youtu.be/watch?v=…?utm_source=test
-   ```
-2. The tracking identifiers should be stripped before navigation completes.
-
----
-
-## 📌 Notes
-
-* This extension only strips **URL query parameters** before page load.
-* It does **not track or store user data** itself.
-* For broader parameter stripping (like social IDs such as `fbclid`, `gclid`, etc.), consider existing extensions that maintain curated lists. ([GitHub][3])
 
 ---
 
 ## 📜 License (No Rights to Reproduce)
 
 ```
-Copyright (c) 2025 Ethan Leigh-Fellows.
+Copyright (c) 2026 Ethan Leigh-Fellows.
 
 All rights reserved.
 
@@ -104,6 +78,3 @@ This software and all associated materials are provided under a strict proprieta
 Unauthorized copying or distribution is strictly prohibited.
 ```
 
-*By installing or using this extension, you agree to abide by the terms of this license.*
-
----
