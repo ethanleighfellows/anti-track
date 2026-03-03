@@ -43,7 +43,7 @@ Since **Anti-Track** is provided as raw source files and not packaged on the web
 ## ⚙️ How to use the Native Settings UI
 Anti-Track goes beyond the static 20 default trackers (like `utm_source`, `si`, `fbclid`). To add your own parameter:
 1. Pin the extension to your toolbar.
-2. Click the icon to open the Premium Glass UI.
+2. Click the icon to open the UI.
 3. Type any parameter (e.g. `session_id`) into the input and click **Block**. Every network request going forward will instantly destroy that parameter!
 
 ---
