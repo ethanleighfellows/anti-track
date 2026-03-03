@@ -1,6 +1,6 @@
 # 🛡️ Anti-Track v2.0.0
 
-**A blazing-fast, TypeScript-powered Chrome extension that completely obliterates UTM tracking identifiers from URLs before a single packet is sent over the network.**
+**A blazing-fast, TypeScript-powered Chrome extension that removes UTM tracking identifiers from URLs before a single packet is sent over the network.**
 
 Keep your browsing **cleaner, shorter, and more privacy-focused**.
 
@@ -11,7 +11,7 @@ Anti-Track intercepts navigation natively at the browser core using `declarative
 ## 🚀 Features
 
 * **Zero-Packet Evasion:** Uses modern Chrome APIs to strip analytics tokens *before* the request even leaves the browser.
-* **Dynamic Custom Rules:** Features a breathtaking glassmorphism settings popup where you can instantly add and block **any custom parameter** you want.
+* **Dynamic Custom Rules:** Features a glassmorphism settings popup where you can instantly add and block **any custom parameter** you want.
 * **Clipboard Sanitization:** Safely strips trackers from URLs copied directly from your webpage, guaranteeing pure links when pasting to friends.
 * **Intelligent Querying:** Driven by `URLSearchParams` to ensure critical parameters required by websites never break.
 * **Typesafe & Fast:** 100% migrated to strict TypeScript with an optimized `esbuild` pipeline.
